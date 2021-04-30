@@ -1,6 +1,7 @@
 package Task16.takA;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Bird {
     int weight;
@@ -42,18 +43,25 @@ public class Bird {
     }public int getWeight(){return weight;}
 
     public void setAge(int age) {
-        if (age <= 0) {
-            System.err.println("Отрицательный возраст такое быть не может!!!");
-        } else {
-            if (age <= 4) {
-                System.out.println("Молодой папугай!");
-            }
-            if (age > 4 && age < 7) {
-                System.out.println("Старый папугай!");
+        Scanner sc= new Scanner(System.in);
+        while (true) {
+
+            if (age <= 0) {
+                System.err.println("Отрицательный возраст такое быть не может!!!");
+                System.out.println("Введите правельный возраст!!");
+                age = sc.nextInt();
             } else {
-                System.err.println("Папугай безсмертный!!!");
+                if (age <= 4) {
+                    System.out.println("Молодой папугай!");
+                }
+                if (age > 4 && age < 7) {
+                    System.out.println("Старый папугай!");
+                } else {
+                    System.err.println("Папугай безсмертный!!!");
+                }
+                this.age = age;
+                break;
             }
-            this.age = age;
         }
     }public int getAge(){return age;}
 
