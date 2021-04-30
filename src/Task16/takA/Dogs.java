@@ -11,6 +11,7 @@ public class Dogs {
         Scanner sc = new Scanner(System.in);
         if(age <= 0){
             System.err.println("Нельзя задать отрицательное число задайте число больше нуля");
+            System.out.println("Введите число с положительным значение!!!");
             age = sc.nextInt();
             setAge(age);
         }else{ this.age = age;}
