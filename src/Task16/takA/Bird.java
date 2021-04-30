@@ -2,7 +2,7 @@ package Task16.takA;
 
 import java.util.Random;
 
-public class Dog {
+public class Bird {
     int weight;
     int height;
     int age;
@@ -11,15 +11,15 @@ public class Dog {
 
     public void setHeight(int hei) {
         if (hei <= 0) {
-            System.err.println("Собака не может иметь отрицательный рост");
+            System.err.println("Попугай не может иметь отрицательный рост");
         } else {
             if (hei <= 4) {
-                System.out.println("Маленькая Собака!");
+                System.out.println("Маленький папугай!");
             }
             if (hei > 4 && hei < 10) {
-                System.out.println("Большая Собака!");
+                System.out.println("Большой папугай!");
             } else {
-                System.err.println("Что то пошло не так и рост собаки больше допустимого!!!!");
+                System.err.println("Что то пошло не так и рост папугая больше допустимого!!!!");
             }
             height = hei;
         }
@@ -27,15 +27,15 @@ public class Dog {
 
     public void setWeight(int wei) {
         if (wei <= 0) {
-            System.err.println("Собака невесомая (Улетела наверное!!!)");
+            System.err.println("Папугай невесомый (Улетел наверное!!!)");
         } else {
             if (wei <= 2) {
-                System.out.println("Худой Собака!");
+                System.out.println("Худой папугай!");
             }
             if (wei > 2 && wei < 5) {
-                System.out.println("Толстый Собака!");
+                System.out.println("Толстый папугай!");
             } else {
-                System.err.println("Собака ТОЛСТЯК!!!");
+                System.err.println("Папугайчик ТОЛСТЯК!!!");
             }
             weight = wei;
         }
@@ -46,12 +46,12 @@ public class Dog {
             System.err.println("Отрицательный возраст такое быть не может!!!");
         } else {
             if (age <= 4) {
-                System.out.println("Молодой Собака!");
+                System.out.println("Молодой папугай!");
             }
             if (age > 4 && age < 7) {
-                System.out.println("Старый Собака!");
+                System.out.println("Старый папугай!");
             } else {
-                System.err.println("Собака безсмертный!!!");
+                System.err.println("Папугай безсмертный!!!");
             }
             this.age = age;
         }
