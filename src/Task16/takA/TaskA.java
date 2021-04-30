@@ -1,9 +1,7 @@
-package com.company;
+package Task16.takA;
 
-public class Main {
-
+public class TaskA {
     public static void main(String[] args) {
 
     }
 }
-
