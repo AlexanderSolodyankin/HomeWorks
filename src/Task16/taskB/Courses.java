@@ -11,4 +11,5 @@ public class Courses {
     public void setNameCours(String name){
         nameCours=name;
     }public String getNameCours(){return nameCours;}
+
 }
