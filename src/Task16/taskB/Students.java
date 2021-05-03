@@ -5,6 +5,7 @@ public class Students {
     private String serName;
     private String patron;
     private boolean gender;
+    private  String gen;
     private String dateBerth;
 
     public void setName(String name) {
@@ -35,8 +36,13 @@ public class Students {
         gender = woman;
     }
 
-    public boolean isGender() {
-        return gender;
+    public String getGender() {
+        if(gender){
+            gen = "Мужской пол";
+        }else {
+            gen = "Женский пол";
+        }
+        return gen;
     }
 
     public void setDateBerth(String dateBerth) {

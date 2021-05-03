@@ -8,7 +8,11 @@ public class Groups {
     private int learns;
 
     public void setUnling(Students[] unit){
+        unling = unit;
+    }
 
+    public Students[] getUnling() {
+        return unling;
     }
 
     public void setCourses(String cour){
