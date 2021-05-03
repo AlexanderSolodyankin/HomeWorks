@@ -1,10 +1,14 @@
 package Task16.taskB;
 
 public class Courses {
-    String nameCours;
-    String dateCreat;
-    int idCourse;
-    String serNameDecan;
-    String nameDecan;
-    String patronDecan;
+    private  String nameCours;
+    private  String dateCreat;
+    private  int idCourse;
+    private  String serNameDecan;
+    private  String nameDecan;
+    private  String patronDecan;
+
+    public void setNameCours(String name){
+        nameCours=name;
+    }public String getNameCours(){return nameCours;}
 }
