@@ -4,8 +4,8 @@ public class Courses {
     private String nameCours;
     private String dateCreat;
     private int idCourse;
-    private String serNameDecan;
     private String nameDecan;
+    private String serNameDecan;
     private String patronDecan;
 
     public void setNameCours(String name) {

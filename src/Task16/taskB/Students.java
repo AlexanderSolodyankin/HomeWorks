@@ -46,7 +46,7 @@ public class Students {
     }
 
     public void setDateBerth(String dateBerth) {
-        this.dateBerth = patron;
+        this.dateBerth = dateBerth;
     }
 
     public String getDateBerth() {
