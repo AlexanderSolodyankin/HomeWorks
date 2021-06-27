@@ -1,18 +1,18 @@
 package com.RandomSetupNames;
 
 public class SetupName {
-    private static final RandomName maleName;
-    private static final RandomName womanName;
+    private static final RandomName womansNames;
+    private static final RandomName malesName;
 
     static {
-        maleName = new RandomMaleName();
-        womanName = new RandomWomanNames();
+        womansNames = new RandomWomanName();
+        malesName = new RandomMalesNames();
     }
 
     public static RandomName getName(Gender name){
         switch (name){
-            case WOMANS: return maleName;
-            case MALES: return womanName;
+            case WOMANS: return womansNames;
+            case MALES: return malesName;
         }
         throw new RuntimeException();
     }
