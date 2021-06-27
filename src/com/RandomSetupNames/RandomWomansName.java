@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class RandomMaleName implements RandomName{
+public class RandomWomansName implements RandomName{
 
     public static String name;
     public static void RandomWomanName(){
