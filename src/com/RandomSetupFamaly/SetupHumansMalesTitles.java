@@ -8,6 +8,12 @@ public class SetupHumansMalesTitles {
     private ArrayList<String> serNames;
     private ArrayList<String> patronymic;
 
+    public SetupHumansMalesTitles(){
+        setNames();
+        setSerNames();
+        setPatronymic();
+    }
+
 
     public ArrayList<String> getNames() {
         return names;

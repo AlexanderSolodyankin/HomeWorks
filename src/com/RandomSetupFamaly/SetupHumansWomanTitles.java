@@ -1,15 +1,31 @@
 package com.RandomSetupFamaly;
 
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public class SetupHumansWomanTitles {
-    Random ranTitls = new Random();
+
     private ArrayList<String> names;
     private ArrayList<String> serNames;
     private ArrayList<String> patronymic;
 
+    public SetupHumansWomanTitles(){
+        setNames();
+        setSerNames();
+        setPatronymic();
+    }
 
+    public ArrayList<String> getNames() {
+        return names;
+    }
+
+    public ArrayList<String> getSerNames() {
+        return serNames;
+    }
+
+    public ArrayList<String> getPatronymic() {
+        return patronymic;
+    }
 
     public void setNames(){
         ArrayList<String> names = new ArrayList<>();

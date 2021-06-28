@@ -22,5 +22,13 @@ public class Famaly {
         return String.format("В семье %s человека", famaly.size());
     }
 
+    public void showFamaly(){
+        String famalyPeople = "";
+        for(AbstractHuman man: famaly){
+            famalyPeople = famalyPeople + man.toString() + "\n";
+        }
+        System.out.println("Семья состояит из: \n" + famalyPeople);
+    }
+
 
 }

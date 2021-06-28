@@ -17,9 +17,11 @@ public class Parants extends AbstractHuman{
 
     @Override
     public String toString() {
-        return String.format("Родитель: \n %s" +
-                "Обязаность: %s" +
-                        "Где работает: %s\n",super.toString(),
+        return String.format("%s: \n %s" +
+                "Обязаность: %s\n" +
+                        "Где работает: %s\n",
+                super.isGender()? super.getAge() >55?"Дедушка" : "Папа" : super.getAge() >55? "Бабушка" : "Мама",
+                super.toString(),
                 super.isGender()? "Воспитывает детей": "Следит за домом", active);
     }
 }

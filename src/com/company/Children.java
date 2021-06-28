@@ -2,8 +2,9 @@ package com.company;
 
 public class Children extends AbstractHuman{
     private String stady;
-    public Children(String name, String serName, String patrols, int age, boolean gender) {
+    public Children(String name, String serName, String patrols, int age, boolean gender, String stady) {
         super(name, serName, patrols, age, gender);
+        this.stady=stady;
     }
 
     public String getStady() {
