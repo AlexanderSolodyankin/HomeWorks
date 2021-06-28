@@ -2,17 +2,12 @@ package com.company;
 
 
 import com.RandomSetupFamaly.EnumViewHous;
-import com.RandomSetupFamaly.SetupFamaly;
+
 import com.RandomSetupFamaly.SetupHous;
 
 public class Main {
 
     public static void main(String[] args) {
-//        SetupFamaly famaly = new SetupFamaly();
-//        Famaly famaly1 = new Famaly(famaly.getMans());
-//        System.out.println(famaly1);
-//        famaly1.showFamaly();
-
         AbstractHome apartaments = SetupHous.SetupHous(EnumViewHous.APARTAMENTS);
         AbstractHome hotel = SetupHous.SetupHous(EnumViewHous.HOTEL);
         AbstractHome hostel = SetupHous.SetupHous(EnumViewHous.HOSTEL);
