@@ -1,7 +1,7 @@
 package com.company;
 
 
-import RandomStringParametr.randomString;
+import RandomStringParametr.RandomString;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -13,8 +13,8 @@ public class Main {
         LinkedList<Person> arrayPerson = new LinkedList<>();
         int num = ran.nextInt(101);
         while (num > 0){
-            arrayPerson = attachObject(arrayPerson, new Person(randomString.getName(),
-                    randomString.getSerName(), randomString.getPatronymic(), true));
+            arrayPerson = attachObject(arrayPerson, new Person(RandomString.getName(),
+                    RandomString.getSerName(), RandomString.getPatronymic(), true));
             num--;
         }
         System.out.println(arrayPerson);
