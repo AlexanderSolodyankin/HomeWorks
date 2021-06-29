@@ -3,7 +3,7 @@ package RandomStringParametr;
 import java.util.ArrayList;
 import java.util.Random;
 
-public interface RandomString {
+public interface randomString {
       Random ran = new Random();
 
 
