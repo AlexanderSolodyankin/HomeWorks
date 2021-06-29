@@ -1,20 +1,28 @@
 package com.company;
 
 
+import RandomStringParametr.RandomString;
+
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
+        Random ran = new Random();
         LinkedList<Person> arrayPerson = new LinkedList<>();
-        Person person = new Person("da","da","da",true);
-        Person person1 = new Person("da7","da","da",true);
-        arrayPerson.add(person);
-
-        arrayPerson = attachObject( arrayPerson, person1);
-
+        int num = ran.nextInt(101);
+        while (num > 0){
+            arrayPerson = attachObject(arrayPerson, new Person(RandomString.getName(),
+                    RandomString.getSerName(),RandomString.getPatronymic(), true));
+            num--;
+        }
         System.out.println(arrayPerson);
+
+
+
+
+
     }
 
     public static LinkedList<Person> attachObject(LinkedList<Person> arrayObject, Person object){
@@ -25,6 +33,7 @@ public class Main {
             System.err.println("Попался обьект который находится в массиве");
         }finally {
             System.out.println("Длина массива: " + arrayObject.size());
+
         }return arrayObject;
 
     }
