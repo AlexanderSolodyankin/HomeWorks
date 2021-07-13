@@ -1,0 +1,81 @@
+create table sports(
+id serial primary key,
+sport_name varchar not null,
+salary float8 not null
+);
+
+create table treners (
+id serial primary key,
+trener_name varchar not null,
+trener_sername varchar not null,
+type_sport integer references  sports(id) unique,
+phone float8 ,
+inn varchar  unique not null
+);
+
+create table visiters(
+id serial primary key,
+visiter_name varchar not null,
+visiter_serName varchar not null,
+data_birthday date  not null,
+gender varchar not null
+);
+
+create table visits (
+id serial primary key,
+visiters integer references visiters(id),
+time_visit timestamp not null,
+trener integer references treners(id)
+);
+---------------------------проверка-----------------------------------
+
+insert into sports (sport_name, salary)
+values ('foodball', 15000), ('basketball', 1000), ('tennis', 500), ('swoming', 10000);
+select * from sports;
+
+insert into treners(trener_name, trener_sername, type_sport, phone, inn)
+values ('trener1', 'trenerSer1', 1, +99655555555550,0000001),('trener2', 'trenerSer2', 2, +99655555555551,0000002),
+('trener3', 'trenerSer3', 3, +99655555555553,0000003),('trener4', 'trenerSer4', 4, +99655555555554,0000004);
+select * from treners;
+
+insert into visiters (visiter_name, visiter_sername, data_birthday, gender)
+values ('visiterName1', 'VisiterSerName1', '12-11-1990', 'males'), ('visiterName2', 'VisiterSerName2', '02-01-1999', 'woman');
+select * from visiters;
+
+insert into visits (visiters, time_visit, trener)
+values (1,'12:00',1), (2,'13:39',1);
+select * from visits ;
+
+--------------------------------- Ответы на вопросы-----------------------------------
+1. Для чего нам нужны Базы Данных?
+
+думаю для удобного обмена информацией и синхронизации работы програм между клиентами
+а так же хранение данной инфорация для общего доступа
+
+2. Что такое первичный ключ (Primary Key)?
+ праймари кей это ключь который позволяет связывать таблицу с таблицей по уникальному ключу
+ я так пологаю что пайм-ключь это параметр таблицы при отсылаясь на данный пораметр может вызвать или связать всю таблицу
+ 
+ 3. Что такое внешний ключ (Foreign Key)?
+ 
+ вторичный ключь это параметр из таблицы на который можно отсылатся и так же при помощи которого можно вызывать (связывать) таблицу 
+ 
+ 4. Чем отличаются колонки от строк?
+ только напровлением и видом несущей информации то есть если в строку можно вписать сразу несколько разных данных с разными параметрами
+ то в колонку пишется только один параметр 
+ 
+ 5. Чем отличаются таблицы от базы данных?
+ 
+ таблица в себе хранит только определенную информацию орентированную под таблицу и так же связь между таблицами
+ 
+база данных же на оборот в себе хронит масив разнной информации которая состоит из таблиц и связей как таблиц так и других данных например драйверов (наверное)
+
+6. Что такое CRUD операции?
+
+это операция котороя читает создает изменяет и удоляет. Я так пологаю что это некая операция которая должа выполнять все эти функции и должна выполнять
+это все фактически автоматически
+ 
+ 
+ 
+
+
