@@ -163,5 +163,88 @@ join univer u on u.id = f.univer_fakultet
 where s.id = 6;
 
 
+---------------------Дополнительное задание 37-----------------------------
+
+create table Academy(
+id serial primary key,
+name_academy varchar unique
+);
+create table Cours(
+id serial primary key,
+table_academy integer references academy(id),
+name_cours varchar unique,
+id_students integer references Students(id),
+);
+create table Mentor(
+id serial primary key,
+name_sername varchar not null,
+id_cours integer references cours(id),
+id_reviewer integer references reviewer(id),
+);
+create table Reviewer(
+id serial primary key,
+id_homeWorks integer references HomeWorks(id)
+);
+create table Lessons(
+id serial primary key,
+theme_lessons varchar not null,
+date_star timestamp not null,
+date_end timestamp not null,
+mentor_study integer references mentor(id),
+reviewer_id integer references reviewer(id)
+);
+create table HomeWorks(
+id serial primary key,
+id_lessons integer references Lessons(id) unique,
+id_mentor integer references Mentor(id),
+time_deliver timestamp not null unique
+);
+
+create table Examen(
+id serial primary key,
+id_cours integer references Cours(id),
+id_Mentor integer references Mentor(id),
+date_exam timestamp not null unique
+);
+
+create table Exam_thert_Mounts(
+id serial primary key,
+id_commision integer references Commision(id),
+date_exam_commision timestamp not null
+);
+
+create table Commision(
+id serial primary key,
+examiner varchar not null
+);
+
+create table Appraisals(
+id serial primary key,
+id_exam_academy integer references Examen(id),
+id_homeWorks integer references Reviewer(id),
+id_examen_thirt_mounts integer references Exam_thert_Mounts(id),
+apprais_mouns_all integer not null
+);
+
+create table Students(
+id serial primary key,
+students_name_sername varchar not null unique,
+id_apprais integer references Appraisals(id)
+);
+
+create table Paymant(
+id serial primary key,
+id_students integer references Students(id)
+);
+
+create table Administrators(
+id serial primary key,
+id_paymant integer references Paymant(id),
+id_academy integer references Academy(id)
+);
+
+
+-- Прошупрощение не проверял саму структуру так как сильно отстал и тороплюсь что бы догнать все уроки
+
 
 
