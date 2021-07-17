@@ -1,25 +1,11 @@
+package com.company;
 
-База для задачи А
+public class TaskB {
+    public static void main(String[] args) {
 
-create table treners(
-id serial primary key,
-trener_name varchar not null,
-trener_sername varchar not null,
-wages integer not null
-);
-
-insert into treners(trener_name, trener_sername, wages)
-values
-('Alexander', 'Harongton', 23000),
-('Vladimir', 'Pogonov', 13000),
-('Elena', 'Nogorosova', 43000),
-('Ruslan', 'Lipnikov', 3000),
-('Roku', 'yo', 14000);
-
-select * from treners;
-
-
-база для задачи Б
+    }
+}
+/*
 create table students_group(
 id serial primary key,
 group_name varchar not null unique
@@ -43,3 +29,4 @@ values ('Pasha', 1),('Masha',2), ('Lera ',3), ('Ksysha',1),
 ('Grogu',3),('Asoka',1),('Anakin',2),('ObVan',3),('Yoda',1);
 commit;
 select * from students;
+ */
