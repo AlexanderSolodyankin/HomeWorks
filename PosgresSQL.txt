@@ -20,6 +20,7 @@ select * from treners;
 
 
 база для задачи Б
+
 create table students_group(
 id serial primary key,
 group_name varchar not null unique
@@ -42,4 +43,10 @@ values ('Pasha', 1),('Masha',2), ('Lera ',3), ('Ksysha',1),
 ('Ker_Tak',1),('SolRa',2),('Lilit',3),('Tor',1),('Fenrir',2),
 ('Grogu',3),('Asoka',1),('Anakin',2),('ObVan',3),('Yoda',1);
 commit;
-select * from students;
+select * from students_group ;
+select * from students ;
+
+
+select count(*) from students s
+join students_group sg on sg.id = s.student_group
+where  sg.group_name = 'JV-W21';

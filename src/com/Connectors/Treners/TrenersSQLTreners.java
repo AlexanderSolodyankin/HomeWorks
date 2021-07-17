@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrenersSQL extends PostgreSQL_Connect implements InterfaceTrener{
+public class TrenersSQLTreners extends PostgreSQL_Connect implements ConnectSQL_Treners {
     @Override
     public List<Trener> getAll() {
         List<Trener> treners = null;

@@ -1,7 +1,15 @@
 package com.company;
 
+import com.Connectors.GroupStudents.ConnectSQL_Group;
+import com.Connectors.GroupStudents.GroupSQL_Setter;
+
 public class TaskB {
     public static void main(String[] args) {
+        ConnectSQL_Group group = new GroupSQL_Setter();
+
+        for (int i = 0; i < group.getAll().size(); i++) {
+            System.out.println(group.getAll().get(i));
+        }
 
     }
 }
@@ -28,5 +36,11 @@ values ('Pasha', 1),('Masha',2), ('Lera ',3), ('Ksysha',1),
 ('Ker_Tak',1),('SolRa',2),('Lilit',3),('Tor',1),('Fenrir',2),
 ('Grogu',3),('Asoka',1),('Anakin',2),('ObVan',3),('Yoda',1);
 commit;
-select * from students;
+select * from students_group ;
+select * from students ;
+
+
+select count(*) from students s
+join students_group sg on sg.id = s.student_group
+where  sg.group_name = 'JV-W21';
  */

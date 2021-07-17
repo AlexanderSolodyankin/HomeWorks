@@ -1,11 +1,11 @@
 package com.company;
 
-import com.Connectors.Treners.InterfaceTrener;
-import com.Connectors.Treners.TrenersSQL;
+import com.Connectors.Treners.ConnectSQL_Treners;
+import com.Connectors.Treners.TrenersSQLTreners;
 
 public class TaskA {
     public static void main(String[] args) {
-        InterfaceTrener treners = new TrenersSQL();
+        ConnectSQL_Treners treners = new TrenersSQLTreners();
         int wages = 0;
 
         for (int i = 0; i < treners.getAll().size(); i++) {
