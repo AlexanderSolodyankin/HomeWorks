@@ -8,6 +8,16 @@ import java.util.Random;
 
 public class TaskC {
     public static void main(String[] args) {
+        /**
+         * Задание выполнено по принципу чтобы программа сама создовала таблицы и заполняла их
+         * на работу программы уйдет примерно от 5 до 20 минут в зависимости от мощности компа
+         * тренировка перед тем как сделать все рабочей уневерсальной станцией для работы с БД
+         * из компелятора. Извеняюсь что код большой и запутаный из за того что отстал решил еще за одно поразбиратся
+         * что да куда так как не понимал тему в опреоре.
+         * что бы проверить домашку наверное будет проще запустить программу предворительно не забудьте поменять пароль
+         * от своей БД в PostgreSQL!!!!!!!!!!!!
+         */
+
         ConnectTaskC_SQL taskC_sql = new CreatSQL();
         String creteTableFerst = "create table peoples(" +
                 "id integer primary key not null," +
@@ -71,6 +81,22 @@ public class TaskC {
                 taskC_sql.InsertTable(insertCitySQL);
             }
         }
+
+
+
+        taskC_sql.addColumsInTable("contry", "language");
+        for (int i = 0; i < cantries.length; i++) {
+            String language = String.format("update contry\n" +
+                    "set %slanguage%s = '%s'\n" +
+                    "where id = %s;\n" +
+                    "commit;",'"', '"', RandomString.getCantryLanguage(), i+1);
+            taskC_sql.InsertTable(language);
+        }
+        String outSQL = "select ci.id, ci.city_name from contry c \n" +
+                "join city ci on ci.contry_id = c.id \n" +
+                "where c.contry_name like 'К%';";
+        taskC_sql.InsertTable(outSQL);
+
 
     }
 

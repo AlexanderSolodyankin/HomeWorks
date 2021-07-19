@@ -36,6 +36,13 @@ public class CreatSQL extends PostgreSQL_Connect implements ConnectTaskC_SQL {
 
     @Override
     public void addColumsInTable(String table, String column) {
+        try (Connection connection = connect();
+             PreparedStatement statement = connection.prepareStatement(String.format("ALTER TABLE public.%s " +
+                     "ADD COLUMN %s VARCHAR", table, column))) {
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
