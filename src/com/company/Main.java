@@ -1,13 +1,13 @@
 package com.company;
 
 
-import java.util.Scanner;
+import com.RandomStringParametr.RandomString;
 
 public class Main {
-
-    public static void main(String[] args) {
-
+    public static void main(String args[]) {
+        System.out.println(RandomString.getCantryLanguage());
 
     }
 }
+
 
