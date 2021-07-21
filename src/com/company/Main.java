@@ -1,12 +1,14 @@
 package com.company;
 
 
-import com.LogicaleGame.People;
-import com.LogicaleGame.Shore;
+import com.LogicaleGame.Start;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Start startGame = new Start();
+        startGame.runGame();
 
 
 
