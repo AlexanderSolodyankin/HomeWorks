@@ -34,6 +34,9 @@ public class Start {
         gameStatus = GameStatus.GAME_RUN;
         int time = 18, count = 0;
         System.out.println("Игра началась");
+        System.out.println();
+        SendMessege.StartGemeMessege();
+        System.out.println();
         while (time > 0) {
             System.out.println("У вас осталось " + time + " часов");
             time = runBoat(time);
@@ -57,7 +60,7 @@ public class Start {
         int b, a;
         System.out.println("Чтобы выбрать человека выберите его номер");
         for (int i = 0; i < outPeoples.length; i++) {
-            System.out.print(outPeoples[i] + ". = " + (i + 1) +  "                 " );
+            System.out.print(outPeoples[i] + " Что бы его выбрать введите <" + (i + 1) +  ">                " );
             System.out.printf("%s |&| %s\n",leftShore[i] == null?"Пусто":leftShore[i].getName(),
                     rightShore[i] == null?"Пусто":rightShore[i].getName());
         }
@@ -79,7 +82,6 @@ public class Start {
             b = sc.nextInt() - 1;
             while (true) {
                 if (leftShore[b] != null) {
-
                     break;
                 } else {
                     System.err.println("Этот человек находится на другом берегу!!!");
