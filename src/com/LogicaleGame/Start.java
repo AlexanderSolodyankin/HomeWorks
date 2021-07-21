@@ -80,11 +80,15 @@ public class Start {
             }
             System.out.println("Выберите второго человека который сядет в лодку");
             b = sc.nextInt() - 1;
-            while (true) {
-                if (leftShore[b] != null) {
+            while (true ) {
+                if (leftShore[b] != null && a != b) {
                     break;
-                } else {
-                    System.err.println("Этот человек находится на другом берегу!!!");
+                }
+
+
+                else {
+                    System.err.printf("%s", a != b?"Этот человек находится на другом берегу!!!" :
+                            "В лодке должны сидеть два человека!!!!!");
                     System.err.println("повторите попытку");
                     b = sc.nextInt() - 1;
                 }
