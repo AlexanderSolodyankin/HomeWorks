@@ -7,7 +7,6 @@ import java.sql.Statement;
 public class ConnectSQL_BaseClass extends PostgreSQL_Connect implements ConnectSQL_Interface{
     @Override
     public void CreateTableSQL(String write) {
-
         try {
             Connection connection = connect();
             Statement statement = connection.createStatement();
@@ -29,7 +28,6 @@ public class ConnectSQL_BaseClass extends PostgreSQL_Connect implements ConnectS
         }catch (Exception e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
-
     }
 
     @Override
@@ -41,6 +39,6 @@ public class ConnectSQL_BaseClass extends PostgreSQL_Connect implements ConnectS
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
+

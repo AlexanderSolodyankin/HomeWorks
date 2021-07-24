@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="postgresql-42.2.23" level="project" />
+    <orderEntry type="library" name="MigLayout" level="project" />
   </component>
 </module>
