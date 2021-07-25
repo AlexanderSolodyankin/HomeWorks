@@ -6,30 +6,27 @@ import java.sql.Statement;
 
 public class ConnectSQL_BaseClass extends PostgreSQL_Connect implements ConnectSQL_Interface{
     @Override
-    public void CreateTableSQL(String write) {
-
-        try {
-            Connection connection = connect();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(write);
-            statement.close();
-            connection.close();
+    public void DDLInterface(String write) {
+        try (Connection connection = connect();
+             Statement statement = connection.createStatement()){
+            statement.executeUpdate(write + "commit;");
         } catch ( Exception e ) {
             System.err.println( e.getClass().getName()+": "+ e.getMessage() );
             System.exit(0);
         }
-        System.out.println("Tаблица создана");
+        System.out.println(write.contains("create")? "Создание таблицы успешна!":
+                write.contains("drop")? "Удаление таблицы успешна!": "Команда успешна пройдена!");
     }
 
     @Override
-    public void InsertTable(String insert) {
+    public void DMLInterface(String insert) {
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement(insert)){
             statement.executeUpdate();
         }catch (Exception e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
         }
-
     }
 
     @Override
@@ -39,8 +36,9 @@ public class ConnectSQL_BaseClass extends PostgreSQL_Connect implements ConnectS
                      "ADD COLUMN %s VARCHAR", table, column))) {
             statement.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
         }
-
     }
+
 }
