@@ -1,7 +1,5 @@
 package com.company.ExamIVPraticeSQLTask2;
 
-import javax.xml.crypto.Data;
-
 public class News {
     private int id;
     private String head;

@@ -9,7 +9,6 @@ import com.company.ExamIVPraticeSQLTask2.SQLNews;
 
 import java.util.List;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -59,9 +58,6 @@ public class Main {
 
         //Удаление таблицы из базы данных
         table.DDLInterface("drop table news_Alexander cascade;");
-
     }
-
-
 }
 

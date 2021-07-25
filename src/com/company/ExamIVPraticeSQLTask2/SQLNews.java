@@ -2,8 +2,6 @@ package com.company.ExamIVPraticeSQLTask2;
 
 import com.Connectors.PostgreSQL_Connect;
 
-
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +12,7 @@ public class SQLNews extends PostgreSQL_Connect implements NewsSQLConect {
         try(Connection connection = connect();
             PreparedStatement statement = connection.prepareStatement
                     (String.format("insert into news_Alexander(name_news, news_info,data_news)" +
-                            "values('%s','%s','%s');", heading, text, data))){
+                            "values('%s','%s','%s'); commit;", heading, text, data))){
             statement.executeUpdate();
             System.err.println("Данные успешно внесены в Базу данных");
         }catch (Exception e){
