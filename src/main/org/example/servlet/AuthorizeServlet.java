@@ -33,7 +33,7 @@ public class AuthorizeServlet extends HttpServlet {
     public  String autorise(String userMail, String password){
         String messeg;
         Users user = UserDataBase.getUserByUserName(userMail);
-        if(user != null){
+        if(user == null){
             messeg="Пользователь не найден!";
         }
 

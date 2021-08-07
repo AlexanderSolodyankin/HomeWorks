@@ -83,12 +83,11 @@ public class UserDataBase {
         PostgreSQL_Connect getListLogsSQL = new PostgreSQL_Connect();
         String getLogs = "select * from user_logs ul \n" +
                 "join Users u on u.user_id = ul.user_id \n" +
-                "where u.email = ?";
+                "where u.email = '" + user.getEmail() + "'";
         List<UserLog> userListLog = new ArrayList<>();
         try(Connection connection = getListLogsSQL.connect();
         PreparedStatement statement = connection.prepareStatement(getLogs);
         ResultSet resultSet = statement.executeQuery()){
-            statement.setString(1, user.getEmail());
             UserLog userLog;
 
             while (resultSet.next()){
@@ -96,6 +95,7 @@ public class UserDataBase {
                 userLog.setId(resultSet.getInt("user_log_id"));
                 userLog.setLoginTime(resultSet.getTime("login_time"));
                 userLog.setLoginResult(resultSet.getString("login_result"));
+                userListLog.add(userLog);
             }
 
         }catch (Exception e){
