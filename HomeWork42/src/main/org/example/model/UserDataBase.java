@@ -7,6 +7,8 @@ import org.example.Connectors.PostgreSQL_Connect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDataBase {
 
@@ -76,5 +78,30 @@ public class UserDataBase {
             System.err.println(e.getClass().getName()+": " + e.getMessage());
         }
         return result > 0 ;
+    }
+    public static List<UserLog> getListLogs(Users user){
+        PostgreSQL_Connect getListLogsSQL = new PostgreSQL_Connect();
+        String getLogs = "select * from user_logs ul \n" +
+                "join Users u on u.user_id = ul.user_id \n" +
+                "where u.email = ?";
+        List<UserLog> userListLog = new ArrayList<>();
+        try(Connection connection = getListLogsSQL.connect();
+        PreparedStatement statement = connection.prepareStatement(getLogs);
+        ResultSet resultSet = statement.executeQuery()){
+            statement.setString(1, user.getEmail());
+            UserLog userLog;
+
+            while (resultSet.next()){
+                userLog = new UserLog();
+                userLog.setId(resultSet.getInt("user_log_id"));
+                userLog.setLoginTime(resultSet.getTime("login_time"));
+                userLog.setLoginResult(resultSet.getString("login_result"));
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+
+        return userListLog;
     }
 }
