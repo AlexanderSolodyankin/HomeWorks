@@ -8,6 +8,10 @@
 <button> Регистрация </button>
 </form>
 
+<form action="page/authorization.jsp">
+    <button> Войти </button>
+</form>
+
 
 </body>
 </html>

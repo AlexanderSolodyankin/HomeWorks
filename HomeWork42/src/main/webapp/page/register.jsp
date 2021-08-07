@@ -3,7 +3,7 @@
 <html>
 <body>
 <h1>
-    ррегистрация
+    Регистрация
 </h1>
 
 <form action="${pageContext.request.contextPath}/register" method="post">
