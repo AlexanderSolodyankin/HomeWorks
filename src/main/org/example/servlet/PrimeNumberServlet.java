@@ -48,7 +48,6 @@ public class PrimeNumberServlet extends HttpServlet {
                         color=false;
                     }else color=true;
                 }
-
                 System.out.println(line);
             }
         }

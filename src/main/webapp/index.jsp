@@ -8,6 +8,10 @@
     <button>Вывод простых чисел в клетку</button>
 </form>
 
+<form action="${pageContext.request.contextPath}/time" method="post">
+    <button>Время</button>
+</form>
+
 
 
 </body>
