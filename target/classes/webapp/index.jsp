@@ -12,6 +12,14 @@
     <button>Время</button>
 </form>
 
+<form action="${pageContext.request.contextPath}/random" method="post">
+    <button>Случайное число</button>
+</form>
+
+<form action="${pageContext.request.contextPath}/google" method="post">
+    <button>Кнопка на сайт Google</button>
+</form>
+
 
 
 </body>
