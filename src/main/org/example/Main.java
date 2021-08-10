@@ -10,9 +10,10 @@ public class Main {
             Map<Integer, Integer> numberCount = new HashMap<>();
         Random ran = new Random();
 
-        for (int i = 0; i < 1000; i++) {
-            Integer currentNumber = ran.nextInt(101);
+        for (int i = 0; i < 100; i++) {
+            Integer currentNumber = ran.nextInt(11);
             if(numberCount.containsKey(currentNumber)){
+                System.out.println(currentNumber + " test " + numberCount.get(currentNumber));
                 numberCount.put(currentNumber, numberCount.get(currentNumber) + 1);
             }else {
                 numberCount.put(currentNumber, 1);
@@ -22,6 +23,7 @@ public class Main {
         for(Map.Entry<Integer, Integer> enty : numberCount.entrySet()){
             System.out.println(enty);
         }
+        System.out.println(numberCount.size());
 
     }
 
