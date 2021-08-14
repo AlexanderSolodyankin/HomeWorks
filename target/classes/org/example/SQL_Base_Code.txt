@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS cars(
+car_id serial primary key,
+car_numbers varchar(10) not null unique);
+
+CREATE TABLE IF NOT EXISTS
+car_info(car_info_id serial primary key,
+color varchar(30) not null,
+manufacture_year int not null,
+model varchar(30) not null,
+price int not null,
+id_car int references cars(car_id));
+
+INSERT INTO cars(car_numbers)
+values('ac8950'), ('br8070'),('fr7080'),('ab1549z'),('RB3377q'),('DD8888t');
+
+INSERT INTO car_info(color,manufacture_year, model, price, id_car)
+values
+('Серый', 2015, 'Nissan', 3000, 1), ('Черный', 2008, 'BMW', 500, 2),
+('Желтый', 1990, 'Жигули', 1000, 3), ('Серый', 2021, 'Mazda', 6000, 4),
+('Розовый', 1995, 'Toyota', 2500, 5), ('Корчневый', 2000, 'Tesla', 13000, 6);
+
+
+
+
+select c.car_id , c.car_numbers,  ci.model, ci.color, ci.manufacture_year,
+ci.price from  cars c
+join car_info ci on ci.id_car = c.car_id ;

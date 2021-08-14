@@ -1,24 +1,32 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
-<body>
-<h2> Домашняя работа номер 43 !!!!</h2>
+<head>
+    <style>
+    form{
+    text-align-last: center;
+    }
+</style>
+</head>
 
-<form action="${pageContext.request.contextPath}/primenumbers" method="post">
-    <button>Вывод простых чисел в клетку</button>
+
+<body style="background-color: #676767;">
+
+<h1> It-Academy Добро пожалывать на сайт </h1>
+<h2> заготовка </h2>
+
+<form action="pages/authorization.jsp">
+    <button> Войти </button>
 </form>
 
-<form action="${pageContext.request.contextPath}/time" method="post">
-    <button>Время</button>
+<form action="pages/register.jsp">
+    <button> Регистрация </button>
 </form>
 
-<form action="${pageContext.request.contextPath}/random" method="post">
-    <button>Случайное число</button>
+<form action="pages/admin.jsp">
+    <button> Администрирование </button>
 </form>
 
-<form action="${pageContext.request.contextPath}/google" method="post">
-    <button>Кнопка на сайт Google</button>
-</form>
 
 
 

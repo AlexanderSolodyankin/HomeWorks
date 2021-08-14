@@ -1,18 +1,27 @@
 package org.example;
 
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+
+import org.example.taskA.TaskA;
+import org.example.taskD.TaskD;
 
 public class Main {
     public static void main(String[] args) {
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss yyyy/MM/dd");
-        Calendar cal = Calendar.getInstance();
-        System.out.println(dateFormat.format(cal.getTime()));
+
+        // задание первое
+        TaskA.startTaskA();
+        //------------------------------------------------------------------------------------------------------------------
+        // задание второе находится в пакете Таск Б в TXT файле
+        //------------------------------------------------------------------------------------------------------------------
+        // задание третье идет при запуске сервера (ТомКэт)
+        //------------------------------------------------------------------------------------------------------------------
+        //  задание третье
+        TaskD.startTaskD();
+        //------------------------------------------------------------------------------------------------------------------
 
     }
+
+
 
 
 }

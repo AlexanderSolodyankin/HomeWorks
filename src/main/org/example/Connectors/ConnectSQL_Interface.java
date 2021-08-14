@@ -1,7 +1,10 @@
 package org.example.Connectors;
 
+
+
 public interface ConnectSQL_Interface {
-    void CreateTableSQL(String write);
-    void InsertTable(String insert);
-    void AddColumsInTable(String table, String column);
+    void createTableSQL(String write);
+    void insertTable(String insert);
+    void addColumsInTable(String table, String column);
+
 }
