@@ -27,8 +27,5 @@
     <button> Администрирование </button>
 </form>
 
-
-
-
 </body>
 </html>

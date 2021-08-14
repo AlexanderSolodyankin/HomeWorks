@@ -3,12 +3,16 @@ package org.example.taskC.model;
 import java.util.Date;
 
 public class User {
+    private int id;
     private String login;
     private String password;
     private String email;
     private Date date;
     private boolean gender;
     private String text;
+
+    public User() {
+    }
 
     public User(String login, String password, String email, Date date, boolean gender, String text) {
         this.login = login;
@@ -17,6 +21,24 @@ public class User {
         this.date = date;
         this.gender = gender;
         this.text = text;
+    }
+
+    public User(int id, String login, String password, String email, Date date, boolean gender, String text) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.date = date;
+        this.gender = gender;
+        this.text = text;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLogin() {
