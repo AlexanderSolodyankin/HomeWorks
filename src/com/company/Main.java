@@ -1,9 +1,7 @@
 package com.company;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
 
@@ -51,7 +49,13 @@ public class Main {
                 countDay = 1;
             }
         }
-        System.out.println(map);
+        System.out.println(map.get(monday));
+        System.out.println(map.get(thursday));
+        System.out.println(map.get(wednesday));
+        System.out.println(map.get(tuesday));
+        System.out.println(map.get(friday));
+        System.out.println(map.get(saturday));
+        System.out.println(map.get(sunday));
 
 
     }
