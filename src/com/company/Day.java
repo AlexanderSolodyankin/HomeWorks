@@ -9,6 +9,10 @@ public class Day {
     public Day() {
     }
 
+    public Day(String month) {
+        this.month = month;
+    }
+
     public Day(String month, int numb) {
         this.month = month;
         this.numb = numb;
