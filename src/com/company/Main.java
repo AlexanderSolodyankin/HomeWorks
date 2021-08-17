@@ -4,65 +4,53 @@ package com.company;
 import java.util.*;
 
 public class Main {
-
+    /**
+     * Переписал у Чингиза, Чингиз все обьяснил тему понял
+     * Не стал делать по свойму так как было бы дофига циклов
+     *
+     */
     public static void main(String[] args) {
-        Random ran = new Random();
-        Map<Day, Integer> map = new HashMap<>();
-        Day monday = new Day("Понедельник" , 1);
-        Day tuesday = new Day("Вторник", 1);
-        Day wednesday = new Day("Среда", 1);
-        Day thursday = new Day("Четверг",1);
-        Day friday = new Day("Пятница",1);
-        Day saturday = new Day("Суббота",1);
-        Day sunday = new Day("Воскресенье",1);
-        int countDay = 1;
-        for (int i = 0; i < 100; i++, countDay++) {
-            int days = countDay % 8;
+        List<City> cities = new ArrayList<>();
+        cities.add(new City("Бишкек", 996));
+        cities.add(new City("Москва", 495));
+        cities.add(new City("Ош", 3222));
+        cities.add(new City("Каракол", 3922));
+        cities.add(new City("Лондон", 20));
+        cities.add(new City("Санкт-Питербург", 812));
+        cities.add(new City("Нью Йорк", 212));
+        cities.add(new City("Вашингтон", 202));
+        cities.add(new City("Пекин", 10));
+        cities.add(new City("Киев", 44));
 
-            if(days == 1){
-                monday.setNumb(monday.getNumb() + 1);
-                map.put(monday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 2){
-                tuesday.setNumb(tuesday.getNumb() + 1);
-                map.put(tuesday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 3){
-                wednesday.setNumb(wednesday.getNumb() + 1);
-                map.put(wednesday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 4){
-                thursday.setNumb(thursday.getNumb() + 1);
-                map.put(thursday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 5){
-                friday.setNumb(friday.getNumb() + 1);
-                map.put(friday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 6){
-                saturday.setNumb(saturday.getNumb() + 1);
-                map.put(saturday, ran.nextInt(31 - 1 + 1) + 1);
-            }
-            if(days == 7){
-                sunday.setNumb(sunday.getNumb() + 1);
-                map.put(sunday, ran.nextInt(31 - 1 + 1) + 1);
-                countDay = 1;
-            }
-        }
-        System.out.println(map.get(monday));
-        System.out.println(map.get(thursday));
-        System.out.println(map.get(wednesday));
-        System.out.println(map.get(tuesday));
-        System.out.println(map.get(friday));
-        System.out.println(map.get(saturday));
-        System.out.println(map.get(sunday));
+        Set<City> onlyCities = new HashSet<>();
+        Set<City> treeSities = new TreeSet<>();
+
+        cities.stream().allMatch(city -> city.getCode() % 2 == 0 ? onlyCities.add(city) : treeSities.add(city));
+
+        printDesc(cities);
+
+        treeSities.removeIf(city -> city.getName().length() > 5);
+
+        printAsc(cities);
+
 
 
     }
 
 
+    public static void printDesc(List<City> list) {
+        TreeSet<City> treeSet = new TreeSet<>(list);
+        Iterator<City> desc = treeSet.descendingIterator();
+        System.out.println("По убыванию:");
+        while (desc.hasNext())
+            System.out.println(desc.next());
+    }
 
-
-
+    public static void printAsc(List<City> list) {
+        TreeSet<City> treeSet = new TreeSet<>(list);
+        System.out.println("\nПо возрастанию:");
+        for (City city : treeSet)
+            System.out.println(city);
+    }
 }
 
