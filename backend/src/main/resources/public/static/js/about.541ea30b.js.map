@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "sources": [
+    "webpack:///./src/views/Home.vue",
+    "webpack:///./src/views/Home.vue?ab8c",
+    "webpack:///./src/assets/logo.png"
+  ],
+  "names": [
+    "class",
+    "alt",
+    "src",
+    "msg",
+    "name",
+    "components",
+    "HelloWorld",
+    "render",
+    "module",
+    "exports"
+  ],
+  "mappings": "sJACOA,MAAM,Q,EACT,eAA6C,OAAxCC,IAAI,WAAWC,IAAA,K,4FADtB,eAGM,MAHN,EAGM,CAFJ,EACA,eAA8C,GAAlCC,IAAI,iC,gBAQL,GACbC,KAAM,OACNC,WAAY,CACVC,aAAA,OCXJ,EAAOC,OAASA,EAED,gB,qBCLfC,EAAOC,QAAU,IAA0B",
+  "file": "static/js/about.541ea30b.js",
+  "sourcesContent": [
+    "<template>\n  <div class=\"home\">\n    <img alt=\"Vue logo\" src=\"../assets/logo.png\">\n    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n  </div>\n</template>\n\n<script>\n// @ is an alias to /src\nimport HelloWorld from '@/components/HelloWorld.vue'\n\nexport default {\n  name: 'Home',\n  components: {\n    HelloWorld\n  }\n}\n</script>\n",
+    "import { render } from \"./Home.vue?vue&type=template&id=164a8bb2\"\nimport script from \"./Home.vue?vue&type=script&lang=js\"\nexport * from \"./Home.vue?vue&type=script&lang=js\"\nscript.render = render\n\nexport default script",
+    "module.exports = __webpack_public_path__ + \"static/img/logo.82b9c7a5.png\";"
+  ],
+  "sourceRoot": ""
+}
