@@ -28,7 +28,6 @@ public class UserService {
     }
 
     @GET
-
     @Produces({MediaType.APPLICATION_JSON})
     public Response getAll(){
         List<User> allUsers = userDao.getAll();
