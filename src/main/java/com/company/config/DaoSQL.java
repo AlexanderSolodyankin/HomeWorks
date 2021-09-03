@@ -13,7 +13,11 @@ public class DaoSQL {
 
     public  Connection connect() throws SQLException {
 
-        Connection connection = DriverManager.getConnection(url, user, password);
-        return connection;
+        try{
+            Class.forName("org.postgresql.Driver");
+        }catch (ClassNotFoundException e){
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+        return  DriverManager.getConnection(url, user, password);
     }
 }
