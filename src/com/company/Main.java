@@ -1,21 +1,24 @@
 package com.company;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 public class Main {
 
     public static void main(String[] args) {
-        HomeList<Integer> nums = new HomeList<>();
-        nums.addElement(45);
-        nums.addElement(42);
-        nums.addElement(96);
-        nums.addElement(67);
-        System.out.println(nums.getLastElement());
-        System.out.println(nums.getIndexElement(67));
+       MyLinkedList<String> list = new MyLinkedList<>();
+        list.addFerstElem("frstWrite");
+       list.addLastElem("LastWrite");
+       list.addFerstElem("IntermediaWrite");
 
+        System.out.println(list.getIndexElement(2));
 
+        /**
+         * реализацию получения следующего элемента я реализовал в элементе контейнере
+         * так как логически только от элемента нужно отсылаться к предыдущему
+         * в самом списке хранятся только два элемента это первый и последний
+         *
+         * Если я правильно понял в данном упражнении был явная реализация Принципа агрегации
+         *
+         */
 
     }
 }
