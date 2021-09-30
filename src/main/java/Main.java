@@ -11,15 +11,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Courses courses1 = new Courses();
-        Group group1 = new Group();
-        Group group2 = new Group();
-        Mentor mentor1 = new Mentor();
-        Mentor mentor2 = new Mentor();
-        List<Student> studentList1 = new ArrayList<>();
-        List<Student> studentList2 = new ArrayList<>();
-
-        studentList1.add(Student.builder().build());
+      Group group = new Group();
+      saveEntity(group);
 
     }
 

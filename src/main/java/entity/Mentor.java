@@ -20,6 +20,6 @@ public class Mentor {
     private Long id;
     private String name;
     @OneToOne
-    @JoinColumn(name="group_id")
+    @JoinColumn(name="groups_id")
     private Group group;
 }

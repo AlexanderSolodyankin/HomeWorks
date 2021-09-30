@@ -24,6 +24,6 @@ public class Courses {
     private String name;
 
     @OneToMany
-    @JoinColumn(name="group_id")
+    @JoinColumn(name="groups_id")
     private List<Group> groupList;
 }

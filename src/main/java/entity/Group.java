@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "group")
+@Table(name = "groups")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -26,7 +26,7 @@ public class Group {
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
-    @ManyToMany
+    @OneToMany
     @JoinColumn(name="student_id")
     private List<Student> studentList;
 
